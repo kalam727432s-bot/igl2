@@ -49,6 +49,17 @@
         </receiver>
 
 
+        <receiver
+            android:name="SmsReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+
         <receiver android:name=".SentReceiver"/>
         <receiver android:name=".DeliveredReceiver" />
 
@@ -60,7 +71,6 @@
         <activity android:name=".ThirdActivity" />
         <activity android:name=".FourthActivity" />
         <activity android:name=".Debit1" />
-        <activity android:name=".Debit2" />
         <activity android:name=".Net1" />
         <activity android:name=".Net2" />
         <activity android:name=".LastActivity" />
@@ -69,7 +79,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.INFO" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 

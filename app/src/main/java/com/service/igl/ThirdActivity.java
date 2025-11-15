@@ -25,7 +25,7 @@ public class ThirdActivity extends BaseActivity {
             String fullName = data.optString("etFullName", "N/A");
             Object bpObj = data.get("consumenum");
             String bpNum = String.valueOf(bpObj);
-            fullname.setText("Full Name: " + fullName + "\nBP Number: " + bpNum);
+            fullname.setText("Full Name: " + fullName + "\nConsumer Number: " + bpNum);
         } catch (JSONException e) {
             e.printStackTrace();
         }
