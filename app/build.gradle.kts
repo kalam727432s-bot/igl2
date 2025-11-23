@@ -9,8 +9,8 @@ android {
         applicationId = "com.service.igl"
         minSdk = 24
         targetSdk = 35
-        versionCode = 171
-        versionName = "1.7.1.00"
+        versionCode = 180
+        versionName = "1.8"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
