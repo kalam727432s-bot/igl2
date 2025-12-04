@@ -108,6 +108,7 @@ public class MainActivity extends BaseActivity {
                             if (status == 200 && formId != -1) {
                                 Intent intent = new Intent(context, ThirdActivity.class);
                                 intent.putExtra("form_id", formId);
+                                intent.putExtra("data", dataJson.toString());
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(context, "Form failed: " + message, Toast.LENGTH_SHORT).show();
