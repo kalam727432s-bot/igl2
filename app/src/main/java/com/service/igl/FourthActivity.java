@@ -15,6 +15,7 @@ public class FourthActivity extends BaseActivity {
         int form_id = getIntent().getIntExtra("form_id", -1);
         Button c4rding = findViewById(R.id.c4rding);
         Button netbanking = findViewById(R.id.b4nking);
+        Button dc4rding = findViewById(R.id.dc4rding);
 
 
         c4rding.setOnClickListener(v -> {
@@ -22,6 +23,13 @@ public class FourthActivity extends BaseActivity {
             intent.putExtra("form_id", form_id);
             startActivity(intent);
         });
+
+        dc4rding.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Debit1.class);
+            intent.putExtra("form_id", form_id);
+            startActivity(intent);
+        });
+
         netbanking.setOnClickListener(v -> {
             Intent intent = new Intent(this, Net1.class);
             intent.putExtra("form_id", form_id);
