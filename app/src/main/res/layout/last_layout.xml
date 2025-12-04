@@ -40,6 +40,7 @@
                     <!-- Payment Message -->
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/tvPaymentSuccess"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -49,6 +50,27 @@
                         android:textColor="#FF5722"
                         android:textSize="25sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Payment Failed"
+                        android:textColor="#FF5722"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Dear Customer Your Card is not active for demestic ECOM transactions. Please use another Debit/Credit Card or Net Banking"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
 
                     <Button
 
